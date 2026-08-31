@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>SIPP DGITAL | SMAN 4 Cimahi</title>
+    <!-- Mencegah zoom paksa di HP agar form tidak bergeser berantakan -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <style>
+        /* Mengatur dasar halaman */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Mencegah scroll ganda di luar iframe */
+            background: #E0F2FE;
+        }
+
+        /* Wrapper menggunakan Flexbox agar pengisian layar presisi */
+        .wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Iframe dibuat fleksibel mengisi 100% ruang yang tersedia */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            box-sizing: border-box;
+            background: transparent; /* Biar background gradient bawaan body terlihat */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <iframe id="myIframe" src="" allowtransparency="true"></iframe>
+    </div>
+
+    <script>
+        const queryString = window.location.search;
+        // Pastikan URL Apps Script Anda sudah benar
+        const baseUrl = "https://script.google.com/macros/s/AKfycbw6fsbOIDaIgeDlSfxtBId9nkO6lP3ju1spd1tL3kKxV-Q-WobzewjgRtH10pbwyJHqFQ/exec";
+        
+        document.getElementById('myIframe').src = baseUrl + queryString;
+    </script>
+</body>
+</html>
